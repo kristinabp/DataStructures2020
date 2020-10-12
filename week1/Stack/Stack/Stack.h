@@ -1,5 +1,5 @@
-#ifndef STACK
-#define STACK
+#ifndef STACK_H
+#define STACK_H
 
 #include <iostream>
 
@@ -10,36 +10,26 @@ private:
     static const int INITIAL_SIZE = 2;
     T* data;
     int size;
-    int capacity = INITIAL_SIZE;
+    int capacity;
 
     void copy(const Stack& other);
-    void resize();
-    void decrease();
+    void resize(int size);
+    void erase();
 
 public:
     Stack(int size = INITIAL_SIZE);
     Stack(const Stack& other);
     Stack<T>& operator=(const Stack& other);
-    /*
-        push resizes the array if full
-    */
-    void push(const T& elem);
-    /*
-        pop returns the element and removes it from the array,
-        if empty print an appropriate message and exit the program
-    */
-    T& pop();
-    /*
-        utility function, returns the top element
-    */
-    T peek();
-    /*
-        utility function, checks if the stack is empty
-    */
-    bool isEmpty();
     ~Stack();
+
+    void push(const T& elem);
+    T& pop();
+    T peek() const;
+    bool isEmpty()const;
+    void print() const;
+
 };
 
-#endif
+#endif // !STACK_H
 
 
