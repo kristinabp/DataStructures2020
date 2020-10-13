@@ -16,19 +16,14 @@ template<typename T>
 void Stack<T>::resize(int size)
 {
 	T* curr=new T[size];
-	for (int i = 0; i < this->capacity; i++)
+	for (int i = 0; i < this->size; i++)
 	{
 		curr[i] = this->data[i];
 	}
 
 	erase();
 	this->capacity = size;
-	this->data = new T[this->capacity];
-	for (int i = 0; i < size; i++)
-	{
-		this->data[i] = curr[i];
-	}
-	delete[] curr;
+	this->data = curr;
 }
 
 template<typename T>
@@ -74,7 +69,7 @@ Stack<T>& Stack<T>::operator=(const Stack& other)
 template<typename T>
 void Stack<T>::push(const T& elem)
 {
-	if (this->size >= this->capacity-1)
+	if (this->size == this->capacity)
 	{
 		resize(this->capacity*2);
 	}
@@ -83,7 +78,7 @@ void Stack<T>::push(const T& elem)
 }
 
 template<typename T>
-T& Stack<T>::pop()
+T Stack<T>::pop()
 {
 	if (isEmpty())
 	{
@@ -91,10 +86,9 @@ T& Stack<T>::pop()
 		exit(1);
 	}
 
-	this->size--;
-	T temp = this->data[size];
-	this->data[size] = nullptr;
-	if (this->size == this->capacity / 4)
+	T temp = this->data[--this->size];
+	
+	if (this->size <= this->capacity / 4)
 	{
 		resize(this->capacity / 2);
 	}
@@ -111,7 +105,7 @@ T Stack<T>::peek() const
 		exit(1);
 	}
 
-	return this->data[size];
+	return this->data[size-1];
 }
 
 template<typename T>

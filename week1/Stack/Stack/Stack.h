@@ -23,7 +23,7 @@ public:
     ~Stack();
 
     void push(const T& elem);
-    T& pop();
+    T pop();
     T peek() const;
     bool isEmpty()const;
     void print() const;
