@@ -1,0 +1,18 @@
+﻿  Cola.cpp
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9): error C2259: 'Cola': cannot instantiate abstract class
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.h(7): message : see declaration of 'Cola'
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9): message : due to following members:
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9): message : 'Item *Item::clone(void)': is abstract
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Item.h(12): message : see declaration of 'Item::clone'
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9): message : 'void Item::print(void)': is abstract
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Item.h(13): message : see declaration of 'Item::print'
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9,17): error C2259: 'Cola': cannot instantiate abstract class
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.h(7): message : see declaration of 'Cola'
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9,17): message : due to following members:
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9,17): message : 'Item *Item::clone(void)': is abstract
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Item.h(12): message : see declaration of 'Item::clone'
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Cola.cpp(9,17): message : 'void Item::print(void)': is abstract
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week2\task3\task3\Item.h(13): message : see declaration of 'Item::print'
+  Item.cpp
+  main.cpp
+  Generating Code...
