@@ -1,6 +1,0 @@
-﻿  System.cpp
-C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\MusicCollection\MusicCollection\System.cpp(33,11): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\MusicCollection\MusicCollection\System.cpp(35,12): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\MusicCollection\MusicCollection\System.cpp(51,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\MusicCollection\MusicCollection\System.cpp(55,21): warning C4018: '<': signed/unsigned mismatch
-  MusicCollection.vcxproj -> C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\MusicCollection\Debug\MusicCollection.exe
