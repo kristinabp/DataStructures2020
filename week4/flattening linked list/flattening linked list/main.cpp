@@ -35,34 +35,37 @@ Node<int>* init() {
 }
 
 template<typename T>
-LListNode<T> flatten(Node<T>* node)
+LListNode<T>* flatten(Node<T>* list)
 {
-	LListNode<T>* result, *index;
-	if (node == nullptr)
-	{
+	if (list == nullptr)
 		return nullptr;
-	}
+	LListNode<T>* result;
 	std::vector<T> elements;
-	
-	result = new LListNode<T>({ nullptr, node->data });
-	index = result;
-	while (node != nullptr)
+
+	while (list != nullptr)
 	{
-		Node<T>* temp = node;
-		while (temp != nullptr)
+		Node<T>* elem = list;
+		while (elem != nullptr)
 		{
-			elements.push_back(temp->data);
-			temp = temp->down;
+			elements.push_back(elem->data);
+			elem = elem->down;
 		}
-		node = node->right;
+
+		list = list->right;
 	}
 
 	std::sort(elements.begin(), elements.end());
-	for (int i = 1; i < elements.size(); i++) {
-		index->next = new LListNode<T>({ nullptr, elements[i] });
-		index = index->next;
+	LListNode<T>* first;
+	first = new LListNode<T>{ nullptr, elements[0] };
+	result = first;
+	result = result->next;
+	for (int i = 1; i < elements.size(); i++)
+	{
+		result = new LListNode<T>({ nullptr, elements[i] });
+		result = result->next;
 	}
-	return result;
+
+	return first;
 }
 
 template<typename T>
@@ -77,7 +80,38 @@ void print(LListNode<T>* head) {
 	std::cout << '\n';
 }
 
+template<typename T>
+void clearMemory(Node<T>* head)
+{
+	while (head != nullptr) {
+		Node<T>* temp = head->down;
+		while (temp != nullptr) {
+			Node<T>* save = temp;
+			temp = temp->down;
+			delete save;
+		}
+		temp = head;
+		head = head->right;
+		delete temp;
+	}
+}
+
+template<typename T>
+void clearMemory(LListNode<T>* head)
+{
+	while (head != nullptr) {
+		LListNode<T>* save = head;
+		head = head->next;
+		delete save;
+	}
+}
+
 int main()
 {
+	Node<int>* first = init();
+	LListNode<int>* flattenList = flatten(first);
+	print(flattenList);
+	clearMemory(first);
+	clearMemory(flattenList);
 	return system("pause");
 }

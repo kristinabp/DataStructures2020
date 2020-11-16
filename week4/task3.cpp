@@ -1,44 +1,75 @@
-#include <iostream>
-#include <queue>
+﻿#include<iostream>
 
 template<typename T>
-void printQ(std::queue<T> q)
+struct node
 {
-	std::queue<T> temp = q;
-	for (size_t i = 0; i < q.size(); i++)
+	T data;
+	node<T>* next;
+};
+
+template<typename T>
+void print(node<T>* l)
+{
+	node<T>* iter = l;
+	while (iter)
 	{
-		std::cout << temp.front() << ' ';
-		temp.pop();
+		if (iter->next != nullptr)
+			std::cout << iter->data << "->";
+		else
+			std::cout << iter->data;
+		iter = iter->next;
 	}
+	std::cout << "\n";
 }
 
 template<typename T>
-std::queue<T> rotate(std::queue<T>& q, int pos)
+node<T>* rotate(node<T>* list, size_t pos)
 {
-	std::queue<T> temp = q;
-	T curr;
-	for (int i=0; i<pos; i++)
-	{
-		curr = temp.front();
-		temp.pop();
-		temp.push(curr);
-	}
+	if (list == nullptr)
+		return list;
 
-	return temp;
+	node<T>* iter = list;
+	node<T>* back = list;
+	while (back->next != nullptr)
+	{
+		back = back->next;
+	}
+	int counter = 0;
+	while (counter < pos)
+	{
+		counter++;
+		back->next = new node<T>{ iter->data, nullptr };
+		back = back->next;
+		node<T>* saver = iter;
+		iter = iter->next;
+		delete saver;
+	}
+	return iter;
 }
 
+template<typename T>
+void clearMemory(node<T>* list)
+{
+	if (list == nullptr)
+		return;
+	while (list != nullptr)
+	{
+		node<T>* saver = list;
+		list = list->next;
+		delete saver;
+	}
+}
 int main()
 {
-	std::queue<int> q;
-	q.push(10);
-	q.push(20);
-	q.push(30);
-	q.push(40);
-	q.push(50);
-	q.push(60);
-	printQ(q);
-	std::cout << "\n";
-	std::queue<int> newQ=rotate(q, 4);
-	printQ(newQ);
+	node<int>* list = new node<int>{ 10, nullptr };
+	list->next = new node<int>{ 20, nullptr };
+	list->next->next = new node<int>{ 30, nullptr };
+	list->next->next->next = new node<int>{ 40, nullptr };
+	list->next->next->next->next = new node<int>{ 50, nullptr };
+	list->next->next->next->next->next = new node<int>{ 60, nullptr };
+	print(list);
+	list = rotate(list, 7);
+	print(list);
+	clearMemory(list);
 	return system("pause");
 }

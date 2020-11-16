@@ -1,2 +1,4 @@
 ﻿  main.cpp
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week4\flattening linked list\flattening linked list\main.cpp(62,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week4\flattening linked list\flattening linked list\main.cpp(112): message : see reference to function template instantiation 'LListNode<int> *flatten<int>(Node<int> *)' being compiled
   flattening linked list.vcxproj -> C:\Users\Krisi\OneDrive - uni-sofia.bg\Documents\GitHub\DataStructures2020\week4\flattening linked list\Debug\flattening linked list.exe
